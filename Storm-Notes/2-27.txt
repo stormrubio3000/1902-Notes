@@ -1,0 +1,154 @@
+join is basically adding all of the items together.
+
+Cross join (cartesean product) - every row from each column will combine with each other row of all the other columns.
+Just multiply the number of rows. and every row will have all the coulmns of both tables.
+
+joins usually work with a foreign key matching up with a primary key and matching the things that line up.
+like putting data back together after normalizing it.
+
+
+from db cross join second db
+
+
+from db inner join seconddb on foreign key = primary key (most common)
+
+full join means keep all columns and fill with null if no data
+
+left keeps the left db columns
+
+right keeps the right dn columns
+
+inner join is default so you can just type join.
+
+top(n) takes the first n results of a query
+
+can make sub queries with (
+
+);
+
+basically the same effect as a join for results. in the () just another select and where and all that.
+
+when sub queries return multiple things usually use in or not in
+when only one return use <, >, =
+
+sub query operators - exists, not exists, any/some, any 
+
+
+len() gives you the length of a string.
+
+set operations - math set of concepts - untion, intersect, and (set difference) except
+
+select thing from thing
+union
+select thing from thing
+
+columns have to be compatiable. just prints all rows. basically combines for one column.
+
+set operations default to distinct you have to put all if you want the repeats.
+
+union gives val from either result
+intersect gives val that are in both results
+except gives results from a and not in b
+
+select * from genre
+
+insert into genre values (26,'misc')
+or 
+insert into genre (genreid, name) values (27, 'misc 2')
+or 
+insert into genre (genreid, name) values
+(
+(select max(genreid) from genre + 1)
+'misc 3'
+)
+or
+insert into genre (genreid, name) values 
+	(29, 'misc4')
+	(30, 'misc5')
+or 
+insert into genre (genreid, name) 
+	(select generid + 100, name
+	from genre)
+
+update statement
+update genre
+set name = 'misc 1'
+where name = 'misc'        if left out where it would change everything
+
+
+update genre
+set genreid = genreid - 50, name = 'miscellaneous ' + substring(name, 6, 1)
+where genreid > 100 and name like 'misc%'
+
+delete from genre
+where genreid > 100        without where would delete all rows
+
+
+truncate table genre      deletes every row	
+
+delete from genre deletes every row individually and slowly
+truncate just deletes everything in one big chunk quickly
+
+
+cannot delete something that is linked by primary keys to foreign keys.
+must set foreign keys to null or delete all of the references.
+
+to create, change, and delete db objects aka tables we use
+create, alter, and drop
+
+go is special and seperates batches. 
+
+
+
+create schema Movie;                             creates a table
+go
+
+create table Movie.Movie (                     creates a table column go figure
+	MovieId INT 
+)
+
+
+alter table Movie.Movie add Title nvarchar(200)             adds a new column
+
+
+drop table Movie.Movie                     this kills the table
+
+
+forgien key is another constraint that isn't here.
+identity means you can't change it explictly
+
+
+create table Movie.Movie (
+	MovieId int not null primary key identity(1,1),                   can add constraints like not null or primary key
+	Title nvarchar(200) not null,                 or unique
+	ReleaseDate datetime2 not null,
+	DateModified datetime2 not null default (getdate())
+	constraint U_Movie_Title_Date unique (Title, ReleasaeDate)
+	contraint CHK_Date check (ReleaseDate > '1900')               check is just a where that you can put on vals.
+	                                     default() is another thing
+)
+
+
+
+
+create table Movie.Genre (
+	GenreId int not null primary key,
+	Name varchar(100) not null,
+	DateModified datetime2 default(getdate()),
+	check (name != '')
+)
+
+
+alter table Movie.Movie add 
+	GenreId int,
+	constraint FK_Movie_To_Genre Foreign key (GenreID) references Movie.Genre(GenreID)
+
+sometimes the red ~~~~~~ just lie... because god is cruel
+
+
+
+
+
+
+
+

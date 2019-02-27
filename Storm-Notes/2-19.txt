@@ -1,0 +1,162 @@
+						WEEKLY TOPICS FOR WEEK 1
+c# anatomy - lang, compiler, runtime, platform, gernal features, program structures
+
+.NET building blocks - framework, standard, core, project. assembly, solution, application, library
+
+infrastructure - CLI,CLR,CTS,BCL,VES,JIT compiler, CIL/MSIL
+
+managed/unmanaged
+
+data types - value, reference
+
+access modifiers
+extended modifiers
+
+class, struct, interface, enum
+
+sepertion of concerns, KISS, DRY, comments
+
+OOP priciples - abstraction, polymorphism, encapsulation, inheritance
+
+advanced data types - upcasting, downcasting, implicit, explicit, boxing, is, ref, out, typeof
+
+collections, generics - array, list, set, dictionary, stack, queue
+
+serialization - XML, file I/O, Json
+regular expresions
+
+exception handling - try, catch, finally, throw
+
+testing - unit test, xunit, arrange/act/assert, TDD
+
+debugging
+
+logging
+
+SOLID principles
+
+delegates - Action, Func, lambda, LINQ, events
+
+Task - async, await
+
+Git - status, add, commit, push, pull, diff log, clone
+
+bash - ls, mkdir, cd
+
+
+I guess that's a lot of stuff but we'll figure it out as time goes by.
+
+should be able to explain all the tools what they are and do.
+
+rm is code of remove works on files  rm -r to remove folders
+
+gitignore hides the files we'll never have look at like bin and whatnot.
+
+when uploading things. you have to use git add then git commit and it will pull up text
+you must type something for it to branch then you git push
+
+make sure that you are in the right folder for the git stuff and when you pull you go in
+the right place.
+
+can use git commit -am  which commits and pushes but it only does edits
+
+when first setting up bit bash have to config email and username with --global
+
+git is a (VCS) version control system or (SCM) source control management
+is specifically a distributed VCS
+other VCS's svn(subversion), hg(mercurial), TFS. are all centeralized.
+
+centeralized is one center server that knows all and compares there to all other.
+distributed everywhere is the whole or central repo. aka branches and we pick main.
+
+working tree is the license and readme.
+index is the .git file  staging area is temp place to prepare for a commit. 
+and the rest is the local repo or whathave you.
+
+remote repo "origin" is github or can be other places but no.
+
+pull fixes all 3 of the working , index, and local repo.
+
+tree goes to index with add and backwards with reset. diff compares them
+
+index goes to local with commit. diff --cashed compares them.
+
+local goes to remote with push.
+
+git stash can temp hold changes without sending them in.
+
+dotnet new sln makes a solution which is needed for vis studio.
+
+then you need to make console and then dotnet sln add console to join them.
+
+then build will build everything conected to the solution.
+
+{ get; set;} is making something that can be given a value and set it.
+
+I mean I guess go to the d2 notes for what I did up to lunch.
+
+ps just use the same damn names as him and don't be stubborn it makes things way easier.
+
+prop tab tab will get the get set thing template.
+
+all interfaces have the same access level throughout. for members.
+
+all children most have at least all the members of their parents.
+
+light bulb with x in vis studios means it can fix things for us.
+
+c# has property initilier syntax which means not contructor with all data that comes after.
+
+a child when casted to its parent only has the parent members.
+
+cannot directly make an abstract class.
+
+can only have 1 direct parent class.
+
+static classes must have all static members but static members can be in non static things.
+
+const has to be given a val right then nd can't be changed after.
+
+readonly can be given val then or in constructor but then can't be changed.
+
+in get and set thing you can make one public and the other private
+
+sealed means no children allowed.
+
+
+			EXTENDED MODIFIERS 
+
+			class		member
+
+
+static  		yes		yes
+
+virtual			no		yes
+
+override 		no 		yes
+
+new 			no		yes
+
+const			no		yes
+
+readonly		no		yes
+
+abstract		yes		yes
+
+sealed			yes		no
+
+partial			yes 		no
+
+END
+
+
+know 5 of 6 of the access modifiers
+we don't care about private protected lul.
+
+ctrl clicking things takes you to their source. Lets ou hop around and find things.
+
+never use throw e in the try catch only use throw because reasons. aka stack trace.
+also just useing catch{} is apparently lazy.
+
+finally always runs after the try catch.
+releases all the resources so no leaks.

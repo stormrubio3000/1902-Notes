@@ -1,0 +1,65 @@
+IT'S FRIDAY FRIDAY GOT TO GET DOWN ON FIRDAY
+
+SOLID Principles ----
+Single-responsibility principle - a class/method should do just one thing.
+Open-close principle - open for extention close for modification.
+Liskov substitution principle - Objects should be replaceable by instances of subtypes.
+Interface segregation principle - heavy interfaces should be split up into lighter ones.
+Dependency inversion principles - instead of high level depending on low or visavera both depend on interfaces.
+
+normally not possible for a method to change something outside itself like local var.
+but you can if you use the out param.
+Allows a method to send back multiple things.
+
+out is basically just using the *.
+apparently a reg is like closer.
+
+for the ref the method has to have the ref in the argu and in the function call from variable.
+
+actual pointer show the actual local of memory ref does not.
+
+need unsafe code when calling unmanaged code like windows API
+
+is replaces == specifically when asking for null.
+
+package manager NuGet manages most/all dependancies. The future is now old man.
+
+nlog and any other logger needs to be added to every new project.
+
+logging is going to be required for project 0.
+
+for regex you use an @ string at the start of you "".
+
+regex syntax. \d = digits,\w for all word characters,\s for all whitespace.
+Using capital the above means opposite.
+surround in brackets[qwe] means one of these,
+* means 0 to many copies. + 1 to many   
+() surrounds groups to be extracted which are numbered in order of made.
+extracting is thing.Groups[num] groups starts at 1 not 0 because reasons.
+
+seperation of concerns - min tight coupling, lol comment your code too.
+Use XML comments for public API, DRY - don't repeat yourself
+KISS - Keep it simple stupid.
+
+must have the classes and the testing for project 0 done be wednesday. 
+Should also have most of the console done.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

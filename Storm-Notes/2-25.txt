@@ -1,0 +1,47 @@
+							Quiz Review *Clap* *Clap*
+
+Way long and harder than expected will have to spend more time studying the symatics next time. Lots of little definition things.
+byte sizes i mean come on really.
+
+So we did the code assessment and everything and it was ok. 
+
+							Weekly Topics
+
+RDBMS - table, row, column, PK, FK, referential intergrity, anomalies, multiplicity
+
+normalization - dependancy, candidate, key, 1NF, 2NF, 3NF
+
+DML - select, insert, update, delete, truncate
+
+DDL - create, alter, drop
+
+Joins - inner, outer (left, right, full), cross, self
+
+set operations - union, intersect, except, distinct/all
+
+subquesy - CTE/with
+
+aggregatefunctions - avg, min, max, sum, count
+
+view
+
+functions - parameters, returns, tabular, scalar
+
+stored procedures - variables, blocks, if-else, try-catch, throw, print, raiserror
+
+trigger - after, instead of, before, row/statement
+
+transaction - commit, rollback, savepoint
+
+ ACID - atomic, consisistent, isolated, durable
+
+isolation - read uncommited, read committed, repeatable, serializable
+
+data types - numeric, string, binary, boolean, money, date/time
+
+built-in functions
+
+ADO.Net
+
+connected arch - DataReader, Command, Connection
+

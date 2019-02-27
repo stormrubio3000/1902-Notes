@@ -1,0 +1,172 @@
+Made azure account.
+go to create sql database
+name everything as needed 
+server must be made unique.
+server - rubio1902sql.database.windows.net
+server admin - 
+username - rubio
+pw - Ilovelucifer1
+
+s0 should be the free one.
+
+DB name - AdventureWorksLT
+
+
+change firewall on azure reasources.
+then show firewall settings.
+
+sql is a relational database.
+
+tables
+		columns
+	rows
+
+database management system (DBMS)
+
+Relational DBMS (RDMBS)
+
+SQL - Structured Query Language.
+
+SQL server kinda == T-SQL
+
+Functional Dependency - for two sets of columns x and y. x depends on y if, for each possible set of y valuse, 
+there is exactly one possible set of x values.
+
+x is a fact about y.
+
+candidate key (of a table) - minimal set of columns that every other column depends on.
+value of any candidate key can uniquely identify that row.
+
+primary key - one of the condidate keys that we choose to actually identify the row.
+
+foreign key (FK) - a column that has copies of a table's primary key, to establish a relationship between the rows of the two tables.
+
+composite key - more than one column together is the primary key.
+
+SQL problems
+non-atomic values - hard to read values. Have to search through strings.
+update anomaly - with redundent data, we might not update all copies.
+deletion anomaly - if we delete some data, we sometimes lose other data.
+insertion anomaly - impossible to insert some data without some assorted data.
+
+solution is called normalization.
+normalization - 1NF, 2NF, 3NF. 3 being fully normalized. 
+
+1NF - no duplicate rows(enforced by primary key), atomic values, no repeating groups.
+
+2NF - 1NF conditions, no non-candidate key columns may depend on PART of any composite candidate key.
+
+3NF - no non-CK column may depend on any other non-ck column(no transitive dependencies).
+
+normalization 
+pros: less redundency, less update anomalies, database is smaller, easier to evolve data model, esier to read and write with consistency.
+cons: some queries slower, harder to make.
+
+our project should be in 3NF
+
+							SQL
+
+-- is comment
+
+in a sql server there are many databases
+within each database we have many schema
+a schema is a namespace/scope for database objects.
+
+in our example database we have schema saleslt
+
+sql syntax is not case-sensetive.
+don't need semi colons
+string compasison by default is also case insensitive.
+collation is the formatting for date/time, format, and number format.
+
+the select statement doesn't even need to access DB. 
+Select is the only thing that really returns something everything else just manipulates data.
+
+we get all columns and all rows with select *
+From does the same thing
+From tells you what DB to look at and the select is what columns to show.
+
+The AS [thing] renames the columns to whatever you like
+
+can modify the select like any other string thing + "fsefwef" + thing AS[ergerg]
+
+Distinct only picks the unique things. select distinct coumn name
+where is an actual conditional 
+select *
+from db
+where column name = "thing" and another conditional
+
+
+AND means this too
+Or means EIther
+!= means doesn't equal.
+
+ordered compasisons of numbers, dates, times, and strings
+strings ordered by dictonary order/lexicographic order. affected by collation.
+
+where firstname >= 'c' and firstname < 'd';
+to find all with start of first letters
+
+all results are unsorted by default. if you want to order use ORDER BY
+
+ORDER BY firstname, lastname
+
+ascending (ASC) by default but can be descending(DESC)
+
+we can do regex-lite pattern matching on strings swith LIKE operator
+
+where firstname like 'C[aeiou]%'     // where firstname starts with c and then has a vowel
+
+data types.
+	numeric
+	interger types
+		tinyint = 1 byte aka byte/char
+		smallint = 2 byte aka short
+		int = 4 byte we use this one most
+		big int = 8 bytes aka long
+	floating point type
+		float = 
+		real = 
+		decimal/numeric(n, p) = (highest precision we use this one most)
+			decimal(4, 3) means 4 digits with 3 after decimal point
+	currency
+		money
+	string
+		char/character(n) fixed length character with size n
+		varchar/character varying(n)  variable length string up to size n
+		nchar(n) unicode char
+		nvsrchar(n) unicode varchar. this is what we'll use all the time for string stuff
+		N'abc' its an nvarchar. 'abc' is a varchar   know the difference buddy.
+	date/time
+		date for dates
+		time for times
+		datetime for timestamps. times attached with a date. low precision and limited range so not used.
+		datetime2(n) for high precision and range timestamps. what we use. n controls precision
+		datetimeoffset for intervals of time
+		can use EXTRACT to get things like year out of datetime2
+		implicit conversions from strings
+		
+
+SELECT statement advanced usage
+GROUP BY clause
+	is used with aggregate functions they take in many values and return one
+	count, avg, sum, min, max
+
+select firstname, count(firstname) as count
+from saleslt.customer
+groupby firstname
+order by count(firstname) desc
+
+To have a conditinal that uses an aggregate function need to use the having function instead of where.
+having is just where for aggregates.
+
+logical order of execution of a select statement
+runs in the order that you write it but the select runs last.
+in order - select, from , where, group by, having, order by 		
+		
+
+
+
+
+
+

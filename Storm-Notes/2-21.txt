@@ -1,0 +1,159 @@
+can add methods to existing classes/struct even the standard ones.
+
+stuff like that would normally go in the porjects library
+
+when making the function simply refer to the argument as this. like this int a.
+
+LINQ == Language Integrated Query. Because Fuck you N.
+
+Its all about IEnumerable and IQueryable. all in the ling namespace
+
+=> ====== a lambda. treated like an ordinary object but anon.
+
+Func is a special type that is an object function?
+
+treat methods like just another piece of data. List of functions oh god.
+
+c# can use functinal of things but is still more OOP.
+
+can pass methods as arguments inside of things like .Sum() and they will call it on their own.
+
+No need to call the method just pass it.
+
+c# does have some immutable classes if you're into that.
+
+LINQ has a method and a query syntax.
+
+has a count and a count(filter) for most things which is the best thing I've ever heard.
+
+has Any, All, Contains, DefaultIfEmpty, Distinct,select, where
+
+select maps through things. makes new list with said restriction
+where finds certain thing. filters out things.
+
+can save processing power and memory because it doesn't do anthing till needed for the filtering and whatnot.
+called deferred execution
+
+the LINQ returns an IEnumerable never the original type. 
+
+just use a foreach loop to make a var to print out the selected thing after processing.
+
+orderby just sorts list by. 
+
+can use .ToList() at the end to make it process right then and then get an easy return.
+
+IEnumberable is important because it lets you put things in foreach.
+
+.Net is a platform for many languges. c# is the coolest tho yo. 
+
+others include F#, vb.net which is visual basic(avoid). with c# is the core.
+
+also have python, java, R, Typescript, JS, ...
+
+interoperability between lang (limited). 
+
+Common language infrastructure(CLI) not to be confused with Command line Interface(CLI).
+
+Virtual execution system (VES)
+
+common intermidiate language (IL,CIL,MSIL) which are .dll or .exe or bytecode or assembly.
+
+the IL is the instruction set for the VES.
+
+.Net,IL,compiler id all in build
+
+VES, native instructions, JIT are all in run time with hardware.
+
+Common type system (CTS) all of the basic primatives aka booland int and the like.
+
+Base Class Library (BCL) like system namespace. console and output and input.
+
+CLI,VES,CTS,BCL is the interface standard for .Net code.
+
+.Net framework is windows only but can go between 32 nd 64 bit.
+
+New way is the .Net Core which is cross-platform
+
+Common Language Runtime = (CLR)
+
+types - class, struct, interface, enum, delegate
+
+delegates look for the return value like void and the arguments like () or (int i)
+
+events have delegate types 
+
+fire events like a methed aka event();
+
+?. is special called null-conditional operator. if thing on left is null it nulls. 
+if not null does thing.
+
+?? is also one returns first thing unless null then it does second.
+a ?? b   will be a or b if a is null.
+
+generics - action<> void returning functions 
+Func<> is all others. last type para is return type. 
+
+			OOP Principles
+
+Abstraction - seperation between functinality and implementation. Properties, methods, CTS
+
+Encapsulation - restricting access within objects. Packaging related things together.
+objects, access modifiers, 
+
+Polymorphism - possibility of many implementations behind common contract.
+method overriding - don't really know what they are calling just gets to them
+method overloading - methods able to take different types of parameters all under same name.
+
+ability to treat a derivied class object as if it were base class.
+
+Inhereitance - ability to take a class and extend its behavior to other classes.
+inhereitance is a thing composition has a thing. when stealing other things.
+
+cannot override base methods so when upcasting their methods will be used.
+
+					go look at his MemoryList.
+
+the params thing packages arguments into an array of things.
+
+Objects need to be serialized to send to hard drive.
+
+collects the data from all across memory into a text or binary format.
+
+use Dispose to close filestreams. Because close isn't cool enough.
+
+Always use exception handling when filestreaming.....
+
+you fell behind on the serialization and should look at his code.
+
+or maybe you didn't and you just didn't have a proper filepath.
+
+using statement is something to use resources at that moment then get rid of them.
+No the same as using that is at the top of the files.
+
+for Async all of their methods return tasks. 
+you have to await them. the task that is. give the method an async modifier.
+and the return type has to be a task. aka Task<the real thing>
+
+.Result for async stuff means ou done messed up.
+
+async code means async tests and xunit can handle that yo.
+
+the async stuff is wack json and the xml. But you know what you'll get used to it I guess.
+
+alt shift f 
+that formats everything out for json stuff
+
+					project 0 first look
+
+console app to manage a store and its inventory.
+
+do things like keep track of customers. 
+Keep track of store locations. 
+order history
+statistics on orders.
+keep track of inventory
+restrictions like no more than 10 pizzas allowed. a few of those.
+menu based interface.
+as well as a testing project.
+save load from file.
+or sql database

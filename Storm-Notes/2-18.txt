@@ -1,0 +1,138 @@
+Installed vis studios 
+Installed Git
+Need to review the Git basics
+Git bash is the one to pin and will be used often
+
+cd is change directory goes places
+mkdir makes folders
+
+made revature folder in the c
+
+ls lists everything in the current folder.
+
+git clone "copied url or clone code" copies everything from said git. literally copy paste...
+
+don't put my work in the training code folder
+
+We are using vis studio code as a lighter ide if we want or need to thank goodness.
+
+git commit makes and then git push sends it tp github.
+
+GIT STATUS TO CHECK IF WE ARE UP TO DATE
+
+GIT PULL TO UPDATE US TO THE SAME AS THE GITHUB ON OUR LOCAL.
+
+when status it doesn't tell if there is a new update that needs to be pulled??????
+
+					OVERVIEW FOR THE COURSE
+
+week 1 - c#, .NET, OOP, testing.
+
+week 2 - SQL (SQL Server), Entity Framework (is an ORM)
+
+week 3 - ASP.NET MVC, HTML, CSS
+		    ^
+		(project 0)
+
+week 4 - DevOps, CI/CD, Azure, Docker
+		    ^
+		(project 1)
+
+week 5 - service oriented architecture, REST, JS
+
+week 6 - TypeScript, Angular
+
+weeks 7,8,9 - Project 3 and Project 2 
+
+week 10 - ???(specialized training from outside the company).
+
+						Daily Schedules
+
+Monday - assessments - quiz, timed coding, mock interviews, QCaudit?
+
+Tuesday -- Thursday - training
+
+Friday - Training + project worktime
+
+
+
+
+sdk is the code needed to write code for any lang. Software Development Kit
+
+dotnet is the one used for coding in c#.
+
+dotnet "insert command" just like everything else.
+
+dotnet new is making the file. We used dotnet new console. seemed to be the basic.
+
+
+dotnet build. compiles
+dotnet run. runs
+
+				the apartment guys
+travis.merine@clvusa.com    email if there are problems after the workorder go in after 48 hours.
+
+nick.escolona@revature.com our training.
+
+					back to dotnet
+
+each file should have its own folder aka project don't declare which one but can pick a path.
+
+run dotnet new console -n name. and ts makes directory and the project in said dir
+
+dotnet restore - updates all the code stuff that it needs to run.
+
+dotnet build sets up the thing and dotnet run does the thing. in (DLL/EXE)DLL = dynamic linked library.
+
+dotnet always restores on build so don't need to do it but it should be understood the steps.
+
+alt + shift + f   auto formats things and is really cool.
+
+ctrl + /  can comment and uncomment things.
+
+return type is at the start and void is nothing.
+
+static means there can only be one and it is unchanging.
+
+static means you can    printstuff()   and not thing.printstuff()
+
+can use var as a type and it auto picks what it is depending on what it is given but must be given something.
+
+var is usually used when its really obvious or there class name is really long and a bother to type.
+
+ctrl + . will show you the answers and fixes to the red sqigs.
+
+namespace should match the folder structure.
+
+classes in namespaces.
+
+classes have methods, properties, and fields.
+
+namespace -> class   -> methods   -> properties -> fields
+system    -> console -> writeline -> 
+
+logical organization - namespaces
+
+physical organization - projects
+
+final level is called solution which is the set of related projects. all compile at same time.(.sln)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,197 @@
+Alter table Movie.Movie 
+	alter column GenreID int not null                changes to not null from allowing null
+
+alter table Movie.Movie add
+	FullName as (Title + ' (' + convert(nvarchar, year(ReleaseDate)) + ')')   adds in a composite column
+
+computed columns have different options like persisted
+
+views - 
+create view Movie.NewReleases as (
+	select * from Movie.Movie
+	where ReleaseDate > '2019-01-01';
+)                                               can be treated pretty much just like a table. Adds a bit of abstraction.
+
+
+cannot add to views would have to drop view and then create again but the right way.
+
+jk alter view actually replaces a view.
+
+variables
+Declare @action as int
+set @action = 1
+
+@ means the thing is a variable
+
+
+
+table-valued variables
+declare My_Table as table (
+	col1 int, col2, int
+)
+insert into @My_Table                             is more temp but can be used another table.
+
+
+user defined functions
+	create function Movie.MoviesReleasedInYear(@year int)
+	return int
+	as 
+	begin 
+		declare @result int
+		select @result = count(*)
+		from Movie.Movie
+		where year(ReleaseDate) = @year
+
+		return @result
+	end
+
+select Movie.MovieReleasedInYear(2002)                     function is created and can be used again for the entire db.
+
+functions only allow read no writing data.
+
+
+triggers - 
+
+create trigger Movie.MovieDateModified on Movie.Movie
+after update
+as 
+begin                                          inside trigger have access to inserted and deleted
+	update Movie.Movie
+	set DateModified = getdate()
+	where MovieId in (select MovieId from Inserted)
+end 
+
+can do triggers on insert update or delete.   can be before, after, or instead of
+
+
+procedures - 
+
+they are like functions
+but allow sql commands inside them including db write
+don't return anything
+call them with execute, nuver inside a select or anything else.
+
+create procedure Movie.RenameMovies (@newname nvarchar(50))
+as
+begin
+	begin try
+
+	if (exists(select * from Movie.Movie))
+	begin	
+		set @rowschanged = (select count(*) from Movie.Movie)
+
+		update Movie.Movie
+		set title = @newname
+	end
+	else
+	begin
+		raiserror('no movies found!',16,1)
+	end
+	end try
+
+	begin catch
+	print error_message()
+	end catch
+end
+
+
+
+declare @rowschanged int
+
+execute Movie.RenameMovies 'Movie', @rowschanged
+
+select @rowschanged
+
+
+
+
+
+
+
+
+transaction 
+ACID
+A- atomic - all operations succeed 100% or do nothing at all
+C - Consistent - Operations should not be allowed to violate constraints.
+I - Isolated - even if multiple transactions run concurrently it should be as if each was running alone.
+D - Durable - transaction incomplete until written to persistent storage
+
+kinda ignore the isolated. I mean try for it but performance takes priority.
+
+4 levels of isolated
+
+read_uncommitted  - best performance and least isolated, allows you to dirty read- see other transactions unfinished work.
+
+read_committed - default. nonrepeatable read-  read row twice, to see if if something change between its change. front and back
+
+repeatable_read - phantom read - other transactions can insert rows that meet conditions on filtering
+
+serializable -  acts almost not in parallel. almost acts like its fully serialized aka data in a row. 
+
+further down you go the more locks used and the worse the performance.
+
+
+for multiple things that we need to do and be atomic we use transaction
+
+begin transaction
+bla
+if bla
+	rollback transaction 
+
+bla
+commit transaction
+
+can put the rollback probs in catch block so no changes are made with the mistake
+
+
+
+
+
+
+
+
+
+
+ADO.Net
+origianlly Active Data Objects
+is the brand name for all .Net data access stuff
+ADO.Net is the old fashined way classically
+
+add nugetpackage    system.data.sqlclient
+
+sqlconnection is what we need.
+
+it needs a string you can look at places like connectionstring.com
+
+never put username and password in as hardcode to github. 
+
+can either make a class with the password. and then make sure that .gitignore ignores the secret class     Secret.cs
+
+
+
+once you have the connection set up properly you need to open it.
+should open the connection with using and make sure open is in there.
+sqlcommand allows you to send a sql command in its syntax to the connection
+
+sqlreader is the return got with command.executereader()
+
+when getting the things call them objects thing = reader["thing"];
+
+
+index for reader starts at 1
+
+sql injection is a thing gross
+
+
+
+
+
+
+
+
+
+
+
+
+
+

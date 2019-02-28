@@ -1,0 +1,57 @@
+Practiced QC for the first half of the day
+
+
+Started with joins
+
+CROSS, RIGHT LEFT, INNER, OUTER
+
+The most common was inner join which is just join as default and is used for matching forigen keys to primary keys.
+
+Then moved on to sub queries can use them in place of joins. They can do most of the same things basically just a different syntax.
+
+Different operators are in and not in which are for multiple results.
+
+the <,>,=,!= are all going to give us back single results. 
+
+any and some are the same thing.
+
+Set Operators - 
+
+Unions - which is basically OR.
+
+Intersects - which is AND
+
+Except - A and Not B. only the first column mentioned that isn't in B.
+
+DML commands - 
+	Select - 
+ 	insert - 
+ 	Update - 
+	Delete - 
+ 	Truncate -
+
+Started DDL ( Data Definetion Lang)
+
+Create, Alter, Drop
+
+can be used on higher database objects
+
+Constriants - 
+	Not Null - 
+	Primary Key - is primary identifier
+	Identity - set next to primary key to auto inc. cannot be changed explictly.
+	Forgien key - as a constraint points to another table.
+	default - sets default
+	check - sets a operatotion that must be satisfied.
+	unique - can be used in a composite key for a unique row of those columns
+
+Then just examples in the sql notes github
+	
+This sets up a constraint for the unique composite key. Can be used to make a primary key as well.	
+constraint U_Movie_Title_Date unique (Title, ReleasaeDate)
+	
+
+
+
+
+Truncate just empties a table. Drop will remove the table as an object.

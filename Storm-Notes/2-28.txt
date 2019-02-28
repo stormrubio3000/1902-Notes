@@ -182,11 +182,154 @@ index for reader starts at 1
 
 sql injection is a thing gross
 
+dataset can store data that datareader gets.
+
+with the help of dataadaptor
+
+
+using the disconnected method this time. Step 1 is still opening connection
+
+
+can put 2 using on top of each other and they nest without having to indent out more.
+
+step 2 is running the command and the adaptor into the dataset.
+
+step 3 is closing the connection.
+
+step 4 is processing the data through the dataset
+
+the disconnected will never be used again for us. should know the steps and the objects and 
+general process though.
 
 
 
 
 
+
+
+
+
+ORM aka the good stuff
+aka Object-relational mapper
+has a few things like that. java-Hibernate. .NET Entity Framework
+
+Entity Framework (ET) on version 6 in .Net framework
+in .NET Core: EF Core 2.2
+	lazy loading?!?!?!?!?!W?
+	many to many without a class for the junction table
+
+
+database-first approach
+
+code-first approach
+
+can create db with command      create database name   straight from sql server bla bla bla
+
+will still need the secret config thing with the entityframworks
+
+
+EF database first approach
+
+1. have startup project on one hand and a data access library project.
+2. need a reference data access from start up.( add reference from class to program project
+3.add nuget package.
+	EFC.tools
+	EFC.sqlserver    to the main
+
+	and EFC.sqlserver           to the library
+
+look at helloentityframework dependencies.    Which project dependiances really matter and you should do it on the startup
+
+
+4. view -> other windows -> package manager console
+
+make sure server connection string is right. should have proper username and password and initial catalog
+must be able to compile to run properly
+5. run command--- Scaffold-DbContext "<your connection string>" Microsoft.EntityFrameworkCore.SqlServer -Project projectname -Force
+
+
+all as one line
+
+
+
+6. delete on configuring override thing its dumb and we don't like it
+
+That should make all the required classes in your library that fit into the db
+
+7.  anytime we change the database go to step 4.
+
+The class created is meant to be slightly readable and that kind of making is called fluent API
+because they want to you to be able to sorta understand whats going on
+
+
+scaffolding will config the modles in onmodelcreating.  which is the right way to do things
+
+2 other ways one is dataannotations 
+other is convention based coding. lets just ignore those other 2 exist though and only use the default one.
+
+context is how you get into things    should just make a new var this is a 
+
+var optionbuilder = new dbcontextoptionbuilder<moviescontext>();
+optionbuilder.useqlserver(connectionstring);
+var options = optionsbuilder.options;
+
+
+using ( var dbcontext = new moviescontext(options))
+{
+	lots of setup but after from the rest its easy stuff
+	can do like a foreach look with (var movie in dbcontext.Movie) where movie is the movie generated class at that point
+}
+
+
+maybe just use nuget packages with the solution   sql server should be on both tools on the main
+
+
+
+insert,update,delete in EF
+
+AddMovie(dbcontext)
+
+
+static void AddMovie(moviecontext dbcontext)
+{
+	genre actiongenere = dbcontext.genre.First(x => x.Name.Contains("Action"));
+	movie newMovie = new movie
+	{
+		Title = "srgsergserg",
+		ReleaseDate = new DateTime(2003,1,1),
+		Genre = actiongenre;
+	}
+
+	dbcontext.Movie.Add(newMovie);
+
+	dbcontext.SaveChanges();
+}
+
+objects that we get out of dbsets are tracked. so things like dbcontext.savechanges() can just know everything that changes.
+
+dbcontext are cheap so can make a lot and save changes and get rid of them often
+
+
+Adding in an interface to this
+
+stick with IEnumerable for interfaces so youll need a get for each data type
+
+going to have to use context.update  with the thing he linked https://docs.microsoft.com/en-us/ef/core/saving/basic
+Going to have to basically make the framework then do the scafoldding then re do all of the functions.
+Partially to use the interface the way that he wants but also to use the add,delete,and update functions that we get in and from the context
+The context is basically the database and we are making function calls through the different pre generated classes.
+These classes will need to be used over ours for all of the saving,deleteing, and updating so we might asa well phase
+out everything that isn't just base temp data after we have our database set up and some sample data put in there to load.
+
+
+interface basically works as a abstract class kind? just tells you what functions need to exist and kinda what they should take and give
+Then a class will inherit? that interface and give methods to those functions that the interface made.
+
+
+
+instead of either copying everything from the new classes from database to local and using them or using the old logic
+on all of the new classes do a combination. Where we would just replace the datatypes in our old with the contextual data 
+that we are getting straight from the database.
 
 
 

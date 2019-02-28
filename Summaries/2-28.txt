@@ -1,0 +1,181 @@
+Can add in computed columns and they have special access to options like persisted
+didn't really go into the other options or what even persisted is. Should look it up
+might be the difference between run and store or just at runtime.
+
+Views - like a fake table made from other tables. Like a temp. bad performance wise.
+
+variables declare by starting something with @.
+set command lets you give the variable a value. 
+Can declare whole tables.
+
+What is the difference between declaring a table and making a view?//Here
+
+Functions - has a return, begin, and end, between begin and end is basic code.
+only allows reading no writing in the function. 
+
+Triggers - can be placed either before, after, or instead of. Can make triggers on
+inserts, updates, and deletes.
+Has special table variables   inserted and deleted.
+inserted in context of after is all of the things that were changed and added.
+
+
+Procedures - like functions but can have sql commands inside them.
+Try catch
+While loops
+Can read/write inside of them.
+Is basically just like a real function in c#. can only call them with an execute.
+never return anything
+
+
+multiplicity -
+1-1 two tables with a unique key between them.
+1-n at least 2 tables forgien key not null.
+n-n at least 3 tables need a junction or joint table with 2 forgien keys both going away fgrom it.
+
+transactions - When you need multiple things to all happen at the same time
+And if any of them fail they all fail and nothing actually happens.
+every sql statement is by default a single transaction.
+A - atomic
+C - Consistent
+I - Isolated
+D - Durable
+
+
+
+4 levels of isolated
+
+read_uncommitted  - best performance and least isolated, allows you to dirty read- see other transactions unfinished work.
+
+read_committed - default. nonrepeatable read-  read row twice, to see if if something change between its change. front and back
+
+repeatable_read - phantom read - other transactions can insert rows that meet conditions on filtering
+
+serializable -  acts almost not in parallel. almost acts like its fully serialized aka data in a row. 
+
+further down you go the more locks used and the worse the performance.
+
+transation commands 
+begin transaction(needed at start), rollback(in mid to say everything fails), commit transaction(everything passed) 
+
+ADO.Net - Active Data Objects
+
+
+
+All with the connected arch
+start with connection string. --Don't publish username and password 
+
+open sqlreader in the using with the connection string
+
+then with a nested using with sqlcommand. 
+
+then another using block for sqldatareader = command.executereader(). 
+
+then we have the data and can do our modifications.
+
+then close the connection. This gets rid of the key and unlocks the sqldb side.///Here
+
+
+Difference between connected and disconnected - disconnected min the time conneted to server.
+Does all the data processing with the data after closing not while it is open.
+
+difference in the steps is you make a DataSet object before the connection.
+
+Then open the connect then create the command like before then create a sqldataadaptor. from command.
+
+Then instead of reader you fill the dataset with what you need. Then process all of you data after
+from the dataset.
+
+Old fashion use of non generic ienumerable. Its in his code maybe review it. but its dumb.
+
+
+
+ORM - Object-relational mapper - solves the object relational impedence mix-match
+aka lets objects and databases play nice and provides abstraction.
+
+.Net uses Entity Framework (ET)
+others are Dapper, Hibernate.
+
+
+Lazy Loading???????
+
+using .Net Core EF Core 2.2
+
+
+using the database-first approach but there is also a code-first approach. 
+
+code generation - code is made for us.
+
+Scaffold- is the same but the specific form that creates the context for our DB.
+
+7 step process.
+ 
+	
+
+1. have startup project on one hand and a data access library project.
+2. need a reference data access from start up.( add reference from class to program project
+3.add nuget package.
+	EFC.tools
+	EFC.sqlserver    to the main
+
+	and EFC.sqlserver           to the library
+
+look at helloentityframework dependencies.    Which project dependiances really matter and you should do it on the startup
+
+
+4. view -> other windows -> package manager console
+
+make sure server connection string is right. should have proper username and password and initial catalog
+must be able to compile to run properly
+5. run command--- Scaffold-DbContext "<your connection string>" Microsoft.EntityFrameworkCore.SqlServer -Project projectname -Force
+
+
+all as one line
+
+
+
+6. delete on configuring override thing its dumb and we don't like it
+
+That should make all the required classes in your library that fit into the db
+
+7.  anytime we change the database go to step 4.
+
+
+API - automated percedural instructions
+
+
+all the code generated is called fluent API - basically easier for us to read. result is created
+by method chaining. common syntax. Allows each object to be returned back in order with proper relations.
+
+
+var optionbuilder = new dbcontextoptionbuilder<moviescontext>();
+optionbuilder.useqlserver(connectionstring);
+var options = optionsbuilder.options;
+
+do this thing to start ^^^^^^^
+
+
+actually need the nuget packages sql server in the library as well.
+
+ref integrity - when violated have 3 options to handle
+1. defualt(raise error)
+2. cascade (deletes everything about it and everything it is referenced to.)
+3. set null - same as cascade but null yo.'
+
+
+dbcontext - cheap to make and use so can be used many places and often.
+everything is done in memory and not saved to db till we call savechanges()
+All objects created from dbset are tracked so savechanges() can just get everything and knows.
+
+After that is just the interface stuff and using the context properly.
+
+
+
+
+
+
+
+
+
+
+
+

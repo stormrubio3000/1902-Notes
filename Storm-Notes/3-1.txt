@@ -1,0 +1,99 @@
+microsoft.extensions.logging.console
+
+need a readonly loggerfactory of new loggerFactory(new[]{new consoleloggerprovider(( , ) => true, true) });
+
+then in the options we already have set up.
+optionbuilder.useloggerfactory(logger i made with that huge line.)
+
+other options to give your optionsbuilder
+
+loading related data types.
+
+Eager loading, lazy loading, Expilict loading
+
+eager loading - related data is pulled as soon 
+
+
+dbcontext.Movie.Include(m => m.genre) this pulls data from other related tables. aka inner join
+Wen calling a table you auto get all the data from that table. 
+
+theninclude is going another table deeper just adding another level of join
+
+navigation properties - aka the created classes entities won't change until you
+push a savechanges
+
+savechanges has a bunch of redudent things and is smart enough to just fix everything magically
+
+
+
+I missed a lot of stuff for notes I was distracted by my project 0
+
+
+
+
+
+Going back to leftover stuff for SQL
+
+
+In transactions can save transaction must give it a name
+
+and can rollback to that save so its a save point without starting the entire transaction over again
+you rollback to the save with rollback transaction save point name
+schemabinding with views - which locks the tables under the view so that the view can't be changed
+
+
+
+indexs clustered and nonclustered
+is an object that exists on a table
+
+clustered index - directly related to the physical layout of the tabkle.
+by default when adding PK adds clusterd index
+
+
+nonclustered index - by default on unique. usually benifitial to create a non clustered index
+on each FK
+
+Azure don't support sql server profiler
+
+azure kinda has its own thing for that
+go to database and then down to the performence tab
+
+
+When talking about performence.
+Talk about sql server or the azure thing. Rewriting the query for optimization.
+Or creating indexes
+
+
+scan goes through everything to find all that are right.
+seek just finds one thing and can stop. Much faster
+
+
+
+layered architecture - high layers reference down no references up
+
+UI
+
+Business logic
+
+Data access
+
+
+
+
+savechanges is basically like transaction. Nothing saves to db until you do that. So if something
+fails then nothing goes through.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

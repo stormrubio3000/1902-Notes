@@ -135,7 +135,7 @@ data types.
 		char/character(n) fixed length character with size n
 		varchar/character varying(n)  variable length string up to size n
 		nchar(n) unicode char
-		nvsrchar(n) unicode varchar. this is what we'll use all the time for string stuff
+		nvarchar(n) unicode varchar. this is what we'll use all the time for string stuff
 		N'abc' its an nvarchar. 'abc' is a varchar   know the difference buddy.
 	date/time
 		date for dates

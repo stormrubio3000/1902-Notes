@@ -40,7 +40,7 @@ February 18 2018 Arlington .NET / Nick Escalona
 * has a default store location to order from
 * cannot place more than one order from the same location within two hours
 
-### order
+### StoreOrder
 * has a store location
 * has a customer
 * has an order time (when the order was placed)

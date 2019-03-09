@@ -1,0 +1,70 @@
+ways to get data from controller to the view.
+1. Strongly-typed view - often in a view model. view can only take one model. either a collection type of some kind.
+or you make a new view model that contains sevel of things you need. 
+2. ViewData - a key-value pair dictinary. object reachable via property on controller.
+can assign values in controller and access them in view. It is cleared between requests.
+3. ViewBag - different way to access viewdata  set properties instead of indexing syntax with strings. 
+Dynamic type. dynamic just says ehh figure it out at runtime. No compile time checking on it.
+4. TempData - a key value pair dictonary. value survives across requests "magically"
+by default stores using cookies sent to client which are sent back to server on needed request.
+can config other providers for tempdata in startup
+There was a full tempdata explination that I missed because project distractions.
+
+can keep data around with hidden form fields as well.
+
+can route things yourself or something not sure.
+
+Good news I got my project thing working so thats worth not knowing how routing attributes works right?
+
+for unit testing the web stuff. and needing the repo and the context. Just make a a fake repository from the
+interface.
+just make a fake repo then make a new controller of what youre testing and give it the repo.
+Then just do your tests from there pretending like it works
+
+add in the nuget package .MVC
+
+then make an actionresult from the controller.create()
+
+assert that the return value is going to be a viewresult
+viewResult = Assert.IsAssignableFrom<ViewResult>(result)
+where your result is the actionresult
+
+then make more asserts from the view result
+
+that is the fake way to do things but mocking is better and easier but has a learning curve.
+
+
+NuGet Moq      this is how we really want to be testing our code.
+
+new Mock<repointerface>()
+
+mockrepo.Setup(r => r.AllGenres()).Returns(genres)
+= new controller(mockrepo.Object);
+
+then all the same things as the fake
+
+
+can compare that 2 collections have equal elements by 
+assert.equal(genres.count, viewModel.Generes.Count);
+
+I would recommend looking directly at his examples in CreateTests.cs
+
+
+
+
+Filters - 
+Authorization filters, Resource filters, Exception filters, Action filter(before and after).before is action method and exe
+Result filters before is result exec and views. after exists to. 
+Filters are applied to controllers/actions using attributes or globally in startup
+
+
+Async starts at the bottom level
+
+
+
+
+
+
+
+
+

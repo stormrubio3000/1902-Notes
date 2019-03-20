@@ -1,0 +1,84 @@
+Devs are going to code. May have a source repo or more primative stuff.
+
+Package repo is for the previous stuff just in case need to revert.
+Is in the hands of IT usually
+
+dev server is the most recent stuff that can we seen in like real time. 
+
+"Source of Truth" - if there are multiple version this would be the "real" one.
+
+dev server is just a hub so everyone is on the same page.
+
+Once again IT is the people in charge of the dev server. 
+
+May have a test server that the QA team will work with to make sure it works as it should.
+
+May have a staging server that will be as close as possible to the release server before it goes live.
+
+Will have a production server which is the released project.
+
+
+DevOps - an extension of Agile values to deployment + maintinance. all the way to production.
+using automoation with param agreed upon by devs, ops, and stakeholders to delop 
+frequently and with quality. Via automated checks 
+people, process, product
+
+First stage is CI - Countinous Integration. very frequently each devs code is integrated with 
+the others with automatic checks: should build/compile, tests pass, static analysis
+Big part of CI is a VCS(version control system) aka Git
+Deploy to dev server on every change.
+
+for dotnet test will be using sonarcloud
+need to dotnet publish right before publishing to stuff
+
+
+Next is Continous Deployment (CD/CDe) - automated deployment all the way to production server with same 
+can be 100% auto to production
+
+
+when making a new pipeline just follow basic directions and then make sure in testing
+that you check the show code coverage box and then make sure you are using Test or test
+corresponding with your tests names because it is case sensitive.And Release???
+
+Nick says that he is going to make a build agent for us to use. 
+
+SonarQube - most common static analysis software used
+SonarCloud is the above but in the cloud because you know the future and all that. 
+
+
+Sonarcloud token : fc8db7c7adda2e3e01f9eab608af606e48ee39ed
+Project2 - 
+
+dotnet tool install --global dotnet-sonarscanner 
+MSYS_NO_PATHCONV=1 dotnet sonarscanner begin /k:"storm-project1" /o:"stormrubio3000-github" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="fc8db7c7adda2e3e01f9eab608af606e48ee39ed"
+dotnet build
+MSYS_NO_PATHCONV=1 dotnet sonarscanner end /d:sonar.login="fc8db7c7adda2e3e01f9eab608af606e48ee39ed"
+^^^ this totally works because reasons.
+
+Technical Debt - how much estimated time it will take you to fix the bad things you did.
+
+for the project we are going to have roughly groups of 3 and will have three seperate 
+projects in that project and each should have its own pipeline and sonar cloud for development.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

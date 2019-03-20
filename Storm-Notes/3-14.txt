@@ -1,0 +1,147 @@
+Docker is hard might have to press F2 to go to boot menu and enable visualization.
+
+Virtualization - sigle boot is just having 1 OS. dual is having 2.
+Virtual is running a OS inside another OS.
+There is a magical thing called Hypervison. Lets you have guest OS's
+Hypervison's job is to expose virtual hardware interface to guest OS
+and connect that to the real hardware via the host OS
+Allows devs to have be able to work on the same thing with the exact same
+environment across all devices
+
+Container - next level of virtualization. have the hardware and os and container engine
+as well as app and dependences. Each app and dependency is a seperate container 
+
+when starting a VM must allocate a fixed block of RAM.
+Containers however flexibly use resources the same way as regular processors. 
+So it acts like a program not a completely seperate OS/ computer
+
+
+Lets do some docker.......yo
+
+can run any linux things in reg bash. Just use docker run and the thing you want to run.
+
+docker run <image-name> - starts a new container from the given image. downloading it if needed.
+
+docker pull <image-name> just downloads/updates image
+
+docker image - is the template for containers. whole file system
+has pointer to program that should run when we start container
+
+in code make a dockerfile with no file extension.
+Start with FROM the baseimage
+From - tells docker to make a new image like a child from an existing image
+
+so get something out for like a program must publish it first then copy it
+
+COPY source dest - copies a thing to a place. 
+      ^       ^
+   filename   inside container (like /app)
+
+CMD [ "thing that runs" ] - tells the container what we are actually running and doing
+( ["/bin/bash"] ) - sends you to the directory in your container.
+CMD [ "dotnet", "/app/ConsoleApp.dll" ] - this will make the program mode run
+
+
+to run the image after the creation use docker run and the thing to pass is the build id 
+the build id will be the output in the console after you use docker build .
+make sure you are in the proper directory.
+
+-it as a option attaches the run result to the current window
+
+exit lets you get out of a container or at least bash in a container?
+
+docker build .   - must be in directory with the docker file with no ext.
+can use docker build . -t aname   which will name it aname and not a string of random.
+
+the SDK error message probably just means that you messed up your pathing.
+
+docker login
+
+username - stormrubio
+password - Ilovelucifer1
+
+
+docker run anythingondockerhub
+will just download and run really fast and only downloads the layers it needs
+tags work kinda like branches
+
+
+ARG - provides like a default? 
+
+he said we need the SDK downloaded if we are going to code in a container.
+Seems like a really convuluted way to do things. Like really not worth learning.
+Like why am I here. Does this really have to go on? 
+Can we just go on to lunch now.....
+
+
+ENTRYPOINT [ "dotnet", "nameofthing.dll" ]  - makes the thing run just like CMD.
+But with more than one thing in it. Like with the MVC
+
+pull is called by build when it needs images and then we have that from then on.
+
+
+docker image prune - will remove all of the dangling images.
+
+
+--rm as an option will remove the image when its done. 
+
+docker container ls   - gives a list of all the running containers
+
+will have to build an image from the 3 projects in project 2.
+won't really have to use them just prove that we know how to if we needed to.
+
+
+on-premises - servers/resources - means they are like in the same buildish.
+
+cloud services - the contrast. where everything is abstract and other places than us.
+
+SAAS (software as a service) - like gmail, office365, outlook. no backend just does things.
+abstract away hardware, network, OS, Disk, everything but the app itself. 
+
+
+cloud platforms - AWS(Amazon Web Services), Micrsoft Azure, Google Cloud
+
+stopped taking notes because vocab is boring.
+that and brainstorming about the project I blame Conrad
+
+UpTime, Downtime.
+Availibility zones
+
+
+IAAS - (Ifrastucture as a service)
+abstract away physical location, electricity, some/most physical stuff
+Disk storage - onnect to one Vm at a time. 
+File Storage - connect to many things at once.
+Blob Storage - unstructered, no dir, no FS. Most efficent for very large files. Streaming and statics
+
+
+
+PaaS (Platform as a service) - 
+Abstract away OS, disk, newtwork, hardware. Like Azure Pipeline
+
+
+
+CaaS ( Container asa service) - 
+
+
+Project 2?
+Just leaving it up to us thank goodness
+Datamodel - at least 2 many to many relationships 
+User interactions - should have real interactions not just a few buttons.
+Needs a database for data persistance.
+user login and different user levels.
+aka DM and players.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+

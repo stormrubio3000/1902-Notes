@@ -1,0 +1,65 @@
+Software Develpment Lifecycle (SDLC) - 
+
+Waterfall model - gather requirements, design, build, test, deploy
+slow and not adaptable
+pros: enables more security, accountability
+
+iterative models
+
+spiral model - mini waterfalls, aka go through all of waterfall quickly and then do it all again
+has responsiveness to client feedback
+
+Big Bang model (not iterative) - Everything at once in one day. suitable for protoyes
+
+Agile models - more of a set of ideals and a buzz word,
+Break project up into features/small pieces called user stories,
+Run individual user stories through the stages of development
+
+
+
+SCRUM - Concrete model, User Story, feature/bugfix,
+User stores have points based on hours estimated .round to the nearest fib sequence.  
+Scrum board - backlog, in progress, testing, done , released
+Scrum master - in charge, lead the daily stand up
+Sprint - 2 - 6 weeks. Basically chunks that are going to be done during that time.
+Starts with sprint planning where we formalize which user stories are going to be done.
+stakeholder - anyone with a stake in project.
+daily standup - everyone in the project gives a brief stand up to everyone else 15 sec
+1. what did yesterday, 2. What doing now, 3. blockers and how to fix them
+Sprint Review/Retrospective - Basically how did we do yo.
+Capacity - productive work hours/points? available during the sprint.
+Velocity - sum of points completed in sprint
+backlog - all stories uncompleted in project
+
+
+Konban - No sprints, continuous planning and reflection/reevaluation.
+Konban board - is same as scrum I think but each column of the board # of points it can contain 
+
+
+CMMI (Capability model maturity something) - process heavy version of agile 
+
+way for users to submit feedback and plug that straight into project board
+
+
+publishing to local.
+
+go to publish on right click the webapp.
+
+server name is localhost
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

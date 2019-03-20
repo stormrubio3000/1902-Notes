@@ -1,0 +1,70 @@
+SOAP - message goes in POST request in the body. Is a protocol
+
+RPC - web services with tight coupling to the implementations
+
+HTTP - has a lot of semantics that traditonally websites implement partly (GET for read POST for write).
+and web services (SOAP RPC) ignore the http stuff and does their own thing because reasons?
+
+REST - (Representational State Transfer) is an architecture. communicate many representations (often JSON)
+over HTTP only.
+1. not rigorously defined (not really REST).
+2. HyperMedia/HATEOAS (110% REST)
+3. One of many API description lang (like WSDL for SOAP).OpenAPI/Swagger. API Blueprint.
+
+
+REST Principles
+Uniform Interface - use HTTP semantically in headers,methods,statuscodes. Identify resources.
+Distinguish the resources from its representations.Have 1 to 1 relationship with URL's and resources
+Client-Server Architecture - self explanitory?
+Statelessness - Should not keep partial data this isn't ready to store to the database yet. 
+Gives it to the user who has to keep it and either throw it away or finish and send it in to be saved.
+Casheability - saves repsonses that probably won't change and just send that instead of processing answer again.
+Layered System - Like an Onion
+Code-On-Demand - Gives code that the user can run to help them understand code representation? not really done.
+
+HTTP Methods/Verbs - Is a toolbox of things that people are naturally are going to try and break.
+GET - is for retrieval of resource
+POST - is for creation of resource
+PUT - is for replacing a resource
+DELETE - is for making things look blue....totally thats it promise.
+PATCH - partial update of resource
+HEAD - just like GET but only sends header not the body.
+OPTIONS - what methods can be used on the resource.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+Everytime you make a request looks at cookies. and sends all that are under that domain and not expired.
+
+
+
+
+for the cookie thing was downloading Identity.EF
+
+Look at his CharacterRestServices for setting up the cookies auth and all that. Its a whole mess but its a thing
+Will be much better to just look at it done then trying to keep up with the steps.
+
+Everything he has done so far has been in the startup.cs
+[Authorize]  in controller over an action method means any logged in can do it.
+or you can just throw it at the top of the whole controller
+
+so for the role for users thing has to do with something called claims we just decide if we believe them or not
+
+Role based operation is easier tho. Took a nap.... probs wasn't the best idea.
+
+
+							JavaScript
+console.log(''); is the write line for js.
+assigning a variable is let x = 0
+
+all numbers are just a number all wrapped up.
+
+object has reference semantics. 
+
+debugger is a breakpoint
+
+
+'use strict'; at the top. opting in to the 'new way' of things that fixes things and is better.
+
+
+2 scopes. Global and function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+It's only a cognizant interview don't panic.
+Ok you can panic a little but you know
+get over it 
+
+
+JS can do a lot of things and the dom handles event handlers and that stuff is cool enough.
+Makes us able to do a lot of dynamic stuff that is neat enough.
+
+Moving on to AJAX and I promise that i'm not going to be working on my project.
+(Asynchronous Javascript and XML)
+a set of tools to send HTTP requests from JS and process the results without browser reloading the page.
+
+
+traditonal tool for the job is XMLHttpRequest object
+
+readyState?!?!?!?!? 4 is the right state for reasons and not weird at all.
+then check if the status is between 200 and 300 meaning a success
+
+if suceessful let obj = JSON.parse(xhr.responseText);
+
+let joke = obj.value.joke
+
+
+but you know whats better. 
+That's so FETCH.
+
+with the fetch you just fetch('url').then(response => response.JSON()).then(obj => {stuff}) and it gets the thing
+a promise is a thing meant to be broken. Wait shit this isn't my blog.
+I mean a promsie is an object wich represents some value that we will eventuall get or fail to get.
+
+
+					Typescript and Node.js
+
+NPM - (Node Package Manager) - lets us compile and run JS and Typescript.
+
+compile/transpile. Used for like ES5 to ES2017. Is done by a transpiler. Babel is common one
+
+Typescript - is compiled into ES5. use transpile instead of compile when JS is the target.
+is JS + strict, compile-time, type checking, interfaces, classes, modules.
+
+Made to write JS with more abstraction then compile into JS to run in browser.
+CoffeeScript - provided better syntax than JS. Looks ugly.Compiles to JS as well
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+							Project 3
+
+
+Housing application - going to be inheriting code. 7ish months since code last touched.
+
+Microservices architexture
+
+Micro service has its own database. Is going to expose API. Going to have a whole bunch of them.
+They will talk to each other to build the answer for any request coming from above.
+Will be put together and delopyed through docker and containers. 
+Container Orchestration - Most common one is Kubernetes.
+We are going to be using Docker Swarm which is on its way out.
+Docker Swarm - docker-compose.yml
+
+Project Architexture
+NG UI has a selection module to connect to the selection. as well as a forecast module to connect.
+Selection(talks to all, not pure micro), Forecast(talks to all)
+User, Room, and Batch
+
+Angluar Library - collections of modules publiched to NPM. gets included in packages. uses ng-packager
+
+Our branch on the github will be broker
+
+New technologies - 
+
+Teams - 
+Conrad(TL), Lee, Ozzy, Andy, Daniel - Auth Team
+Storm(TL), Matt K, Matt V, Ben, Will - Queues Team
+
+Auth - Want authinitcation on the whole project. Auth with AzureAD. UI as well. Forecast needs better connections.
+
+Queues - Messges queues instead of direct communication. Not starting from Scratch.
+New data should be sent to a queue that selection is listening to.
+Using Azure Service Bus
+General Resonsiplity over Selection Service.
+Improvied logging (Serilog)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

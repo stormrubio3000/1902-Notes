@@ -1,0 +1,63 @@
+Not doing a lot of page refreshes. Not getting a whole new html page.
+
+Javascript is just going to do a lot of dynamic changes of the DOM.
+
+Thats what angular is going to target.
+
+Is going to be very concerned with how we have strongly typed data. 
+and the DOM where reactive and reflective of the data. 
+DOM = document object model.
+
+Angular uses TS to achieve single page applications. 
+
+TS has interfaces and classes and some are going to be special and have decorators to upgrade them.
+
+Angular special decorators @Component, @NgModule, @Injectable, @Directive
+
+job of an angular component is to manage a view. we can nest them. 
+references a template HTMl + directives + binding
+
+
+modules provide namespace and compilation context for components, other directives, pipes, services 
+
+A component must be declared in a module. knows about the Ng stuff
+Must have at least one module called root module(AppModule)
+
+TS module is a .ts file with inports and/or exports at the the top. just keeps things out of the global scope.
+
+Injectable turns something into a service. view-independent logic that supports D.I.
+
+directives are anything that is not valid html that we put in the html file.Ngstyle,Ngif,NgFor
+
+app route directive - basically the selector?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

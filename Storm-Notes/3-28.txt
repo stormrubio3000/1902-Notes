@@ -1,0 +1,75 @@
+So we had the interview yesterday and I think that went wellish for everyone.
+But also no notes for that day and I promise I'm going to pay attention to notes for angular today.
+
+imports take modules into a module so that you can see and use the things in them.
+Export lets other modules see what you have inside you so they can use it.
+
+Inside modules are components.
+Module must declare a whole bunch of things I guess too.
+
+Rootmodules must have bootstrap with all of the things it needs.
+
+Services have a providedin. by the root. basically a singleton. 
+
+module also has providers list.
+
+descriptors are the things that let you know whatw it is. Like selectors and styleIRls. or templateURLs
+
+Template syntax -  {{  }} interpolation TS this.name,
+[disabled]="disabled" or in the component  this.disabled.    property binding 
+event binding (click)="handleClick(event)" in TS handlClick() {      }
+[(ngModel)]="data"   to this.data  two-way binding   
+import FormsModule
+
+so he is back to the Pokemon example he is using so I doubt I will be able to follow.
+
+ng g component charcter   - creates a new thing called character
+
+
+major version number - changed when there is any broken back-wards compatability
+
+minor version number - new features without changing old things.
+
+patch - just bugfixes
+
+
+same-origin policy means that a server request through a browser must come from the user not another website.
+Is by default not allowed. But can be allowed on the server side.
+
+
+
+so about that promise....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

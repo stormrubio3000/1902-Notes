@@ -1,0 +1,183 @@
+Totally going to be better focused today and going to take the notes that I need for project 1
+that way I don't have to spend hours looking up stupid shit. Thanks for listening to my ted talk enjoy the rest of the notes.
+
+with the edit view you like to pre fill the existing data.
+
+do by looking up the movie by id passed to the action then giving that movie to the view.
+
+Nick is just doing his updatemovie action and view. It is the same logic that we used for the original movie
+Nick is just putting it with the server acting as a go between to the user to get our input.
+
+Then we stopped to watch the project 3 showcase 'cloud burst'
+unimaginative name. No description of use.
+their work was kinda unimpressive for a group of 15 people.
+The interviewers did ask some hard questions and were good at picking apart the details.
+A lot of the process seems on forming good industry habits like agile and the key word sto go along with that.
+They needed to work on a lot of soft skills still they had a lot of filler noise. 
+Make sure to have everything relevant pulled up and ready to show just in case for questions.
+Asked about design patterns as well that seems to be a common question.
+umm umum umm and and and um umum and and and ya ya yaya uh uh u huhuuhuh uhhuhuhuuhuhuhuhuhuhuh
+They had a standing order as a group and they made it look awkward almost pushing past each other.
+Need to make a better system to along everyone to see and be seen and still allow people to get to the front to speak.
+Need to have answers pre prepared for common questions like design patterns and future iterations 
+also assign people to speak on the main points of those answers.
+Avoid patrick he has them dealbreaker questions.
+Seemed to have 3ish people that did most the talking. Team Leaders?
+Code review is a big thing.
+Also not pushing to master you need to branch and then code review before the merge.
+Pair Programming is good. CODE REVIEW EVEN AFTER THAT NOT JUST MERGE
+Apparently thing have regulations and you have to follow them go figure.
+
+7/10
+
+
+Data Annotations - add a new folder called view models and add a class to it.
+View Model is a type of model in the MVC pattern. Tightly bound to a particular view. 
+using view models to be each view's model. 
+
+so makes a new class containing the real class you want to use.
+Plus some other stuff that could be useful
+
+then above the properties go 
+basically any kind of data validation has a data annotation to go along with it.
+tell the MVC what to check and validate for automatically. uses JQery for client side
+and ModelState for server side validation.
+have to change the view to be pointing from the old class to the model view.
+
+
+
+
+[MaxLength(30)]
+[Required]
+[DataType(DataType.Date)]
+[Display(Name = "Release Date")]
+public DateTime ReleaseDate {get;set;}
+
+that makes the name really display the right way.
+
+
+
+
+makes a new list of all genres
+select asp-for = "Genre.Id" asp-items="@(new SelectList(Model.Genres, "Id","Name"))
+
+
+have to assign all of the values to your modelview class in your controller action.
+
+
+
+if (!ModelState.IsValid) return view(viewmodel) means the para set by data annotations have to be right. or it kicks it back
+
+works better if you have a single one of a type that is the wanted one and a list of all of them.
+you know what I mean
+
+model is basically a class passed to the view via a controller
+
+
+Should make the viewmodels first and then scaffold all of the views from those viewmodles to save work.
+
+oh boy silent errors are so fun!!!!
+
+the class that you are making your controller on. Make a constructor that takes a repo object.
+
+
+2 steps for dependency injection
+1. regester the dependency as a service in startup configureservices
+2. request the service.
+
+never have to make a new movies controller
+
+// need to make the repo take in the context as a constructor. Then pass the context internally.
+
+scoped means there is one per request
+
+singleton means there is only one and it is pass to every request.
+
+
+use migrations to generate sql database with c# classes
+
+
+
+////////////All he uses is the startup a little then the moviecontroller and the created views
+
+
+
+conventions things like ID will be chosen as the primary key.
+
+we have a fluent API code in the dbcontext.onmodelcreating
+most flexible
+best practice.
+
+
+we have data annotations for the code first classes.
+
+steps for code first EF.
+
+1.EF stuff should be in a seperate class library as much as possible.
+2. add NuGet package the sql server one 
+3. implement your context class inheriting from dbcontext
+ a.need a constructor taking in dboptions
+ b. add in the dbSets of all the classes you want in the db.
+ c. generate override for on model creating
+ d.look at his notes for making the modelbuilder for each of the classes.
+4. register DBcontext in startup by using the connection string into user secrets
+5. add initial migration.
+6. update database
+
+
+Add-Migration makes a new db using the above properly configured.
+
+
+
+right click the web app project and go down to manage user secrets for the connection string
+
+
+kinda like git where instead of commit and then push 
+you add migration and then update-Database (will create a db if one doesn't exist)
+
+
+
+review of razor markup -  All these are things that happen at rendertime with the HTML
+	Razor Expressions - @Model.Name, @(new Data{Name="A"}.Name)
+	the result of the c# expression is converted to string HTML encoded and inserted onto the HTML page.
+	Razor Blocks - @{var data = 5;}  basically runs code during view render.
+	doesn't inherently insert anything into HTML
+	Control Statements - @while, @foreach, @switch,   HTML inside these will be conditionally inserted.
+	@foreach is a common way to display lists.
+	Directives - @Model <type-name>   which make the view strongly typed
+	Tag Helpers - look like HTML but render differently.
+
+
+HTML Helpers - typically with a => that points from model to value 
+DisplayFor, DisplayNameFor, EditorFor, TextBoxFor, ActionLink, DropDownListFor,BeginForm
+
+
+Tag Helpers - 
+a(anchor): asp-action, asp-controller, asp-route, asp-route-(paramname)
+input: asp-for
+select: asp-for, asp-items
+label: asp-for
+(span): asp-validation-for, asp-validation-summary
+form: asp-action
+
+
+XSRF - Cross-Site Request Forgery - generate a special unique token for each form and only receive posts
+that have a valid and active form. This stops bad things because reasons
+
+
+Data Annotations - Attributes both EF and ASP.NET use for validation checks and other metadata
+Required, MaxLength, Range, RegularExpression, DataType, Display
+
+
+Dependency Injection(DI) - in startup.ConfigureServices.
+services.AddSingleton - one instance for app lifeton
+services.AddScoped - makes one for each HTTP Request
+services.AddDbContext ""
+services.AddTransient - one instance per ask including multiple in a single request.
+
+are supposed to check ModelState on anything that we get from outside sources.
+can add in model errors onto the model state
+
+
+
+

@@ -1,0 +1,62 @@
+
+oop principles
+boxing and unboxing
+generics
+xml format (header, body, what's required etc.) 
+exception handling (try catch)
+unit tests
+SOLID
+delegates
+async
+
+
+DML commands
+pk and fk
+set operations
+aggregate functions
+scalar
+phantom read: New row that meets condition. Problem in repeatable_read isolation level.
+
+
+http lifecycle
+and mvc lifecycle
+input validation
+communication in mvc
+controller returns
+data annotations
+viewbag
+routing
+filters
+ado.net and EF
+dependency injection (in general, MVC and angular)
+
+
+Waterfall vs agile
+DevOps - Difference btwn build and release pipeline
+artifacts
+continuous integration and deployment
+*docker commands* 
+dockerfile commands
+*entrypoint of angular?*
+
+
+*how to consume api* : service exposes itself. Consumer use the service by reading/writing/accessing.
+wcf
+wsdl
+REST principles 
+HTTP verbs
+*kinds of contracts* - 
+Service contracts: Defines interface for the service.
+Data Contracts: Define variables (data type and how to de/serialize).
+Message contracts: Define class as used message format (give messageheader and messagebodymember on class fields).
+Fault Contract: Give fault (error) type information an operation can have.
+Operation Contract: Exposes methods (for the client to then consume)
+
+
+Angular decorators
+What's in NgModule
+declare a component
+what is routing in angular
+what is a component
+dependency injection and injectables
+two-way data binding

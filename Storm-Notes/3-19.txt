@@ -1,0 +1,73 @@
+				Service-Oriented Architeture
+next level for seperated concerns/loose coupling.
+
+We will split the application into web services instead of linking our layers at build time as DLL's
+They will communicate at run time over the web. Doesn't have to be ours even just talk to others.
+
+"API" 
+"Web API"  both kinda stand for a web service
+
+Expose - service that people can use   aka backened that gives things
+Consume - Service that uses other services aka UI that gets things
+
+Also doing JavaScript this week?!
+
+SOAP - (Simple Object Access Protocal) - communicate using XML over a variety of protocals 
+rigourously define all needed info about service in a WSDL doc. Client is the thing asking.
+Server is the thing answering. Weather its a person or a server or another website.
+WCF (Windows Communication Foundation).
+Need to have an interface and a method. 
+[ServiceContract] for the interface. [OperationContract] for the methods inside the interface.
+Every SOAP message is in XML. <Envelope> then <header> then <body> then close in right order.
+Binding - what protocal to ue and what port. Address - what URL the service is gonig to be at.
+Contract - What are all operations/messages you support.
+[DataContract] inside complex data types tell it which parts to bringish.
+[FaultContract] the type of exception that can thrown. Has to be wrapped in a fault exception.
+SOAP is old all hail REST.
+
+
+REST - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

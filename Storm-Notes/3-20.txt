@@ -1,0 +1,89 @@
+SOAP - message goes in POST request in the body. Is a protocol
+
+RPC - web services with tight coupling to the implementations
+
+HTTP - has a lot of semantics that traditonally websites implement partly (GET for read POST for write).
+and web services (SOAP RPC) ignore the http stuff and does their own thing because reasons?
+
+REST - (Representational State Transfer) is an architecture. communicate many representations (often JSON)
+over HTTP only.
+1. not rigorously defined (not really REST).
+2. HyperMedia/HATEOAS (110% REST)
+3. One of many API description lang (like WSDL for SOAP).OpenAPI/Swagger. API Blueprint.
+
+
+REST Principles
+Uniform Interface - use HTTP semantically in headers,methods,statuscodes. Identify resources.
+Distinguish the resources from its representations.Have 1 to 1 relationship with URL's and resources
+Client-Server Architecture - self explanitory?
+Statelessness - Should not keep partial data this isn't ready to store to the database yet. 
+Gives it to the user who has to keep it and either throw it away or finish and send it in to be saved.
+Casheability - saves repsonses that probably won't change and just send that instead of processing answer again.
+Layered System - Like an Onion
+Code-On-Demand - Gives code that the user can run to help them understand code representation? not really done.
+
+HTTP Methods/Verbs - Is a toolbox of things that people are naturally are going to try and break.
+GET - is for retrieval of resource                                               Safe, Idempotent
+POST - is for creation of resource
+PUT - is for replacing a resource                                                Idempotent
+DELETE - is for making things look blue....totally thats it promise.             Idempotent
+PATCH - partial update of resource
+Important ^
+Not Important v
+HEAD - just like GET but only sends header not the body.                           Safe, Idempotent
+OPTIONS - what methods can be used on the resource.(Allow Header)                  Safe, Idempotent
+TRACE - Not that important just is a thing that does a thing.
+
+"Safe" - should not change the system's state. (Enables Cashability). GET is the safe thing. 
+Up to us that it shouldn't change anything so it should be safe. 
+
+"Idempotent" - multiple copies of the same request should have the same effect as only one copy
+
+
+HTTP Status Code - 100 - 599
+100 - 199 - Informational. lol k
+200 - 299 - Success. Good job you did a thing.
+300 - 399 - Redirection. Nice Try Kiddo.
+400 - 499 - Client Error. You did a bad.
+500 - 599 - Server Error. We did a bad.
+
+100 - continue. Keep going you're not done yet but it was a good start.
+
+-200 - ok. genericly succeed aka lazy you did it good job gold star.
+-201 - Item Created. For POST responses. Should return the thing created and the location its at.
+-204 - No Content. succeed for PUT, DELETE, PATCH
+
+301 - Moved Permanently. It's not safe to go alone. Take this.
+-302 - Found. Like moved temp. Common browser redirect.
+304 - Not Modified. Has to do with cashing out baby show me the money
+
+-400 - Bad Request - Generic client error. Like a server side validation error
+-401 - Unauthorized - Papers Please. Really for unauthenticated 
+402 - Payment Required -  Basically a meme.
+-403 - Forbidden - Truly not authorized
+-404 - Not Found - Where it at doe.
+405 - Method not allowed - Server literally just can't even.
+-406 - Not Acceptable - server cannot provide any of the acceptable formats. Client asks for hard candy I only have pixie sticks
+418 - I Am A Teapot - Cannot brew coffee because I am a Teapot
+
+-500 - Internal Server Error - Generic server error. Try Again Later
+501 - NOt implemented - Yet thats a thing but also my B
+502 - Bad Gateway - This server didn't have a problem but some other server it was talking to did. Weakest Link
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

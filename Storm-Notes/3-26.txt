@@ -1,0 +1,6 @@
+in angular things are broken down into modules.
+This is a label/namespace for components/directives, pipes, etc
+
+can import such from other modules, must export its own for others to see.
+
+apps is the routes/modules.

@@ -1,0 +1,75 @@
+loose equality vs strict
+
+aka 2 == two     is true 
+
+2 === two   is false
+
+can't check NaN directly any comparision will be false   .      isNaN() to check that shit.
+
+
+true == truthy and rest are falsy     thats a big yikes from me
+
+
+JS objects can inherit directly from other concrete objects
+"Prototypal inheritence"
+
+arrow function => kinda make the value of the function static but not really but sorta but don't quote me on that
+when you're telling people I said that.
+
+don't make classes make a constructor and then just make your variable that constructor then start changing things.
+make the constructor a function with input and then use this. on all of the input
+make sure use new nameoffunc()
+
+
+use this.__proto__ new nameoffunc()      for inheritence from one "Class" to another
+
+Syntactic Sugar is a cool word. I need to find a way to bring it up and use it in casual conversation.
+It will totally work promise.
+
+
+
+funtion newCounter() {
+	counter:0
+	function {
+		this.counter++;
+	}
+}
+
+let counter1 = newCounter()
+
+
+closure means that if a nested function uses an inner variable of the upper function the varible will 
+still exist as long as it needs to and can be called and used more by that function again without reseting
+
+
+(function () {
+
+})()
+is called IIFE (immediately invoked function expression
+used for doing things right then in the code without showing variables to the user.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

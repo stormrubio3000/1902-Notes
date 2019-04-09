@@ -1,0 +1,58 @@
+Work Items quick list - 
+
+Data from user in selection changed by room but not saved for room allocation.
+Only sent to UI the right way no data is actually changed?
+
+Sender and receiver in both sides of the queue?
+
+User Queue needs to be set up
+queuefactory setup with connection string for each change to send to queue
+sent messages need to be formatted to represent the changes that are being made.
+factory needs to be closed nd only used when needed so no memory leak
+
+
+Selection Queue needs to be set up
+queuefactory setup with connection string set up to receive messages from queue.
+reads queue messages and makes the appropriate changes.
+checks the queue regularly. 
+Closes the queue when not checking so no memory leak.
+
+
+validation checks didn't check for whitespaces in users
+
+only one type of job?
+
+return a 404 if there is an error in their database with their mapper?
+
+
+
+Refactor controllers to not contain repo logic....its bad
+
+
+
+
+
+
+
+
+when a user is updated only updates the location and address. and not name or anything else?
+
+
+Need to add swagger to some whole projects.
+
+No real data persistance? Data isn't carried over between sessions.
+
+
+
+dotnet dev-certs https -ep ${APPDATA}/ASP.NET/Https/ServiceHub.User.Service.pfx -p 8e98fa7b-4497-4240-ad36-7e8987e3539b -t
+
+dotnet user-secrets -p src/*.Service set Kestrel:Certificates:Development:Password 8e98fa7b-4497-4240-ad36-7e8987e3539b
+
+
+
+
+
+need to check in on the doceffects and the version control for it?
+
+when moving over to serilog. Use console sink. Is a package that shuts off the default logs that are "noisy"
+

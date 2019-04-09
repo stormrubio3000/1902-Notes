@@ -1,0 +1,359 @@
+			GET A PRESENTATION CHEAT SHEET BEFORE THE END OF THE DAY.
+
+						Weekly Overview
+MVC
+HTML - element, attribute, doctype, HTML 5, common elements ( lists, structural, etc)
+HTML 5 - audio, video, canvas, new elements, accessibility
+forms -  inouts, valaidation, GET, POST
+CSS - rule, property, cascade, box model, inheritence, media query, positioning, responsive design,
+external/internal/inline, selectors, bootstrap
+MCV - model, view, controller, viewmodel
+HTTP request lifecycle
+------------ASP.NET MVC
+controller - actions, HTTP verbs
+model - model binding, data annotations
+view - Razor, Layout@model ( strongly-weakly-type), viewdata, viewbag, dynamic, tempdata
+routing - convention, attribute, route, parameter, query string
+validation - server, client, modelstate, CSRF, anti-forgery token
+testing - mock, BDD
+filters - authorization, resource, action, exception, result, (custom)
+helpers - HTML, tag, (custom), common ones
+ASP.NET+EF design - code-first EF, migrations
+dependency injection - singleton, scoped, transient, FromServices
+
+
+
+
+
+
+HTML - Hypertext Markup Language
+
+old HTMl ---> HTML 4
+
+XHTML - strict subset of XML. With error handling well developed. 
+
+So we skipped that and went to HTML5
+
+HTML 5 - "living standard". No defined version numbers. Things just kinda develop and evolve.
+
+w3c - wwwConsortium, was the people that made the old HTML standard aka html 4
+WHATWG - is the new people that handle HTML 5, Web hypertext application technology working group...
+they have a much less strict view point.
+
+closer to present there is a more serperation of concerns between HTML, javscript, and CSS
+HTML - describes scruture and semantics of things
+CSS - tells us about apperance, layout, and presentation.
+Javascript - dynamic, client-side, behavior.
+
+HTMl syntax - <tagname> attribute name = "attributevalue"> contents </tagname>   whole thing is an element
+input and img tag don't need an end tag they are just open tag because they don't have content
+<input attr=val />         ----self closing tag
+
+lists of values in attr: space-seperated      data = "1 2 3"
+
+go to mozilla developer network to look up the proper behaviors
+
+some atttirbutes that are global. Like id, class, title, style, all event handlers
+
+id - there so css and javascript can reference that item globally. unique on a page
+class - a grouping of elements for css/js to target
+title - hover tooltip text
+
+<--   --> everything in between is a comment.
+files for html are .html or .htm
+in vscode can pick the one with the box for html and you get a starting point
+
+document type definition (DTD) aka the DOCTYPE
+tells the browser what it is and what version. html counts as html 5 by default
+
+without a doctype the browser will just kinda guesses a so called compatibility mode.
+
+doctype is not an element but is still required for html for. so it is an exception.
+Everything else on an html 5 page should be an element.
+
+root element for an HTMl page is called the document element.
+
+aka <html>
+if everything is right the <html>
+it will have a <head> and a <body> as well as their tag closes
+
+head is for meta data not actual page contents
+
+<title> gives you the name of the tab for the browser
+
+HTML doesn't care about white space
+
+
+<p> </p>   is the paragraph tag
+
+
+All of the white space and enters and what not are just for code readability. 
+
+
+<br> goes to a new line
+
+
+<h1>  through <h6> are the headers with size from 1 to 6 with 1 being the biggest
+
+<image src="the path to the image like a url.">
+
+local ones start looking in the folder that the html file is. So its easy to find sub folders
+
+<a> with thing in between is going to link. with href="actual link path" </a>
+
+
+target attr is for where the new tab link is going to take you. _blank takes you to a new tab.
+
+lists - 
+ordered list
+<ol> 
+	<li> list item 1</li>
+	<li> list item 2</li>
+</ol>
+
+
+<ul> is the same thing but an unordered list.
+
+default for lists is bullets
+
+old fashioned with poor seperation of concern
+<i> is for italics
+<b> is for bold
+<u> is for underline
+
+new way with better seperation of concerns
+<em> is italics
+<strong> is bold
+<u> is still underline
+
+
+<blockquote> is an indented paragraph of quotation
+
+most HTML elements are by default block or inline
+
+inline elements do not lay claim to their own vertical space on the page.
+block elements claim vertical space to themselves
+
+inline - italics, bolds, underlines, <a> <img>
+
+
+block - <p>, the lists, headers
+
+<div> is for generic block elements div is for division. basically a generic block element
+
+<span> is for generic inline elements 
+
+div and span usually have ids and classes on them so we can target them with things. Otherwise they aren't doing much.
+
+tables
+
+<table> 
+	<thead> for header rows
+	<tbody> for the rest of the rows
+
+<tr> is a row with a <td> where the actual data is </td> inside </tr>
+
+if charset = utf-8 then all unicode characters work fine.
+
+aka other languages or emojis
+
+we also have character references if we need them. 
+
+&lt; == <, &gt; == >, &amp; == &
+
+& is kinda the literal escape
+
+for other stuff we like just directly embedding unicode characters minus whitespace
+
+&nbsp == non breaking space  aka browser cannot auto line break on
+
+&copy == copyright symbol
+
+in addition to the "named" characters we have a numeric char reference
+
+
+&#and then numbers for a symbol
+
+
+&#x and then numbers is a symbol getting from hex
+
+<select> is a drop down can have many options. selected="selected" as an attribute of option makes it the default.
+	<option>
+</select>
+
+for bool options/attributes the option="option" swtiches true and false. can shorthand by just saying option
+
+
+new elements in HTML 5 
+several structural elements
+<main> like body but minus like side bars and such. like a div just pre specified
+
+<article>
+<section>
+<header>
+<footer>
+<aside>
+<nav>
+use these in place of making a specific div. because these are premade and easy.
+
+
+we used to use plugins on the web. flash the most
+
+<audio>
+<video>
+<canvas>
+
+canvas is used for like flash games and animations
+audio/video have different codices like mp3, wav. we give a few options and browser picks it's favorite.
+
+support for captions as well with their own standard formats.
+
+
+HTML added lots of accessibility attributes as well. standard starting with (ARIA)
+
+
+
+forms -
+
+DNS - domain name service
+
+browser takes a url name and then asks DNS what is this. and it is turned into a IP address
+
+then gets the page from the server with that IP address
+with an HTTP request
+which basically says "GET /the html page i want"
+
+get the page through an HTTP response with the page. aka the html file
+
+forms use a method called POST not GET. which is another HTTP request.
+POST has a bunch of key value pairs with the send request and then get back a response still.
+
+default action is the current webpage
+<form method="GET or POST" action="url sending the form data to"> 
+	Name: <input type="has a lot of options" name="name of the value">
+	
+
+	<input type"submit"> --this ends the form aka the submit button that sends the form off
+</form>
+
+
+in the url from the ? onword is called the query string. Happens with like a GET
+
+for forms you are supposed to do a <label> and then your form with what the form field should be. as good practice.
+
+can put the input inside the label
+
+don't forget that <button> is a thing to do in forms
+
+
+Google Search: <input type="text" name="q" required pattern=""a regex pattern"> 
+required means the browser won't let you submit without it filled in
+pattern lets you make a pattern yo....
+maxlength="a number" does what it says.
+minlength="a number" yo same thing
+placeholder is an alternative to labels
+
+all with auto provided error messages
+
+he is going through all of the different kind of inputs really quick and I just can't be bothered to type them
+all when I just got back from lunch.
+
+CSS - Cascading style sheet
+is composed of rules. Each rule will have some selector. such as table then {property: stuff in here is the values}
+can have multiple properties per rule.
+
+sass and scss compile down to css and allow nesting of css?
+
+selectors -
+*     *         means all elements
+tag              div                 all with tag(all divs)
+.class          .login-form          all with class(all .login-forms)
+#id             #logo-img            the one with that global id( id = logo-img)
+[attr = val]    [src = logo.png]     all with the attribute that is set to value
+[attr~=val      [class~=asdf]        all the attr containing value
+
+
+selector combinators
+
+,         p, div          both the tag p and tag div so either selector (or)
+          p.login         all match both (and) all p tags with class login
+>         p>div           (parent child) all matching second selector in the first selector ( a div in a p)
+(space)   div p           (ancestor to decendent) all of the p in a div including sublevels
++         p + p           next sibling all matching second selector that are sibling directly after first selector
+~         p ~ p           only sibling of the second selector type of the first selector type
+
+
+pseudo-class - 
+:valid, :invalid, :link, :visited, :active, :focus, :hover, :nth-child(aN+b), :first-child, :last-child
+select elements in some state, at the end of the selector, can be used to target things
+
+
+pseudo-element - ::
+<selector> ::before
+	   ::after
+selects like the space before/after the selector               kinda like a trigger
+           ::selection (what the user is highlighting)
+
+
+the cascade -
+when multiple rules set the same property on an element, which on wins!!!! lol even CSS has a battle royale
+
+user-agent styles - stuff the browser provides as automatic
+
+
+author styles - CSS included on documents
+
+
+<head>  <link rel="stylesheet" href="main.css">       proper way to do things    external style
+
+
+<style>  p{font-weight: bold;}                 internal style       not easily reusable and causes cluter
+
+
+<body>     <p style="border: 1px solid black">            inline style      violates seperation of concerns
+
+
+
+BR - 
+1. importance      aka at the end you can say !important and it will win and override (Hackers)
+2. specificity     more # aka id selectors wins, if ties goes to .(class) selectors, if tied then more tags wins.
+3. source order    if there is still a tie from above later rule wins. nice guys finish last and CSS has a fedora.
+
+
+
+inheritance - box model - boxes around each other. from biggest to smallest. Margin,Border,Padding, Contents
+
+margin -     1   2       in order its top, right, bottom , left
+             3   4
+ 
+
+when making CSS edits should probably just make classes for things. Don't just go by tag.
+
+
+
+presentation stuff - 5-8 min per person. including questions
+
+
+start with introducing yourself. 
+what is your project trying to fulfill 
+then tell what technologies
+then demo project - placing an order. show cust order hist, store order hist, order hist total sort,
+at least one invalid input
+then go into design considerations
+then end on a good note aka my project thanks questions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

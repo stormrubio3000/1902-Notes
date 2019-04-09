@@ -1,0 +1,160 @@
+Display Property - inline, block
+can drop on in element or tag and just make them inline or block and act like it.
+also inline-block which is a compromise that does?
+also none which deletes the object as if it wasn't there at all
+
+similar as none you have visibility: hidden         still takes up space but that space is blank
+
+
+Position property - default is static 
+Relative - activates - left,right,top,bottom depending on other objects
+absolute - uses left,right,top,and bottom too. offsets to the parent element not the other objects around it.
+fixed - left,right,top,bottom too. fixes the element to the overall viewpoint not just its parent element.
+
+
+CSS Layout Tools - flexable box layout(flex box) - like making a drink by parats?
+Grid Layout - setting things in a grid?
+column layout - like columns......... I guess
+
+color means foreground color.
+background-color - is the background color. Well I mean I hope it is.
+font-family - has generic like 'sans-serif'. can list them and it will try to use them in order depending on what it knows.
+font-weight - bolding
+font-style - italics
+
+
+Inheritance - when property is set on an element it is also set on all children elements.
+well most things it kinda just figures out whats best. like color is but inline vs block is not. border is not
+
+
+CSS resets - purpose is to take away and remove all of the browser user defaults that way you have 'perfect' control
+of how the website will look specifically
+
+Normalize.css - Google it. because it doesn't remove defaults but changes them to a 'resonable' baseline.
+
+Adaptive Design - write many CSS files. Basically one per resolution.
+
+Responsive Design - 1 CSS file. Page will automatically reformat without refresh based on things like media query.
+is more and more the standard expectation of web design now. Hard to make by oneself. 
+Often use libraries to help get it done. Like BootStrap.
+
+
+Media Query - applys something based on things the user has. Like User Ascpect ratio. Or height and width.
+Can address things and change setup with things for like desktop with mouse vs touchscreen on mobile
+Print Preview - reformats the page for better printing. uses a screentype?
+
+
+Bootstrap - is JS as well as CSS. Based on a 12 column grid inherently. Nicely Divisable. 
+Just apply classes to elements and it does things. Just have to follow documentation.
+
+ASP.NET includes Bootstrap by default. 
+
+ASP.NET is microsofts brand name for their web stuff.
+
+/////////////////////////////////////////////download .NET CORE SDK///////////////////////////////
+
+
+all based on server and client. client sends a request via browser. to web server (IIS Express)
+
+Active Server Pages - "Web Forms" .aspx have special syntax inside them. that connects to .NET code
+web forms had poor serperation of concerns. 
+
+ASAP.NET MVC - framework for building apps in .Net with strong seperation of concerns using the MVC design pattern.
+not to be confused with the other MVC? 
+
+MVC - Model View Controller. is a design pattern. 
+Model - Object oriented data. Data sent to or received from the client. 
+Views - Templates for the HTML. Layout. Apperence. + CSS and JS.
+Controller - Objects that receive requests from clients. Then combine approriate models and views to create response.
+
+Model gets from controller and view.
+view gets from controller and gives to model.
+controller gives to model and view.
+
+= means default.
+
+there is another web server that is a container directly for app which is called kestrel.
+IIS Express is the launcher to the browser. it is a web server.
+
+
+ASP.NET creates a webhost and runs it using config from startup class
+
+Here we register services that we can later request from framework
+and we can use that for dependency injection
+
+
+
+app.useMVC  - where we config convention based routing.
+routing is the process/rules by which crontroller and action method will be instiated and called to jandle request.
+
+defaults: new {controler = "home", Action = "Index"}
+
+uses anon class. just kinda poof an object with what you give it.
+
+no compile erros when like spell things wrong. Just kinda fails at runtime.
+
+after your local host number and the / is what you can type in and that is where it looks for a matching controller
+
+mvc checks route conventions 1 by 1 in order looking for a match. Can have a 404 page at the end to catch everything.
+
+web doesn't care about case sensitivity
+
+routes in config are where we pick the controllers
+
+in RAZOR
+@* is the comment.
+
+@{   lets you completely do code in c#
+@*( works too I think
+
+@RenderBody()    is where the index/action thing is going to be called.
+everything else in the view is just CSS formatting stuff. Well plus razor stuff that has other stuff in it.
+
+can edit views even while the program is running and the view will update on a save refresh not only a full restart.
+Not the c# running classes though. Thats a no no apparently.
+
+
+a view can only have 1 model.
+@model is how you pass a model to a view           like @model.username 
+
+
+
+
+
+
+
+
+
+ya sorry zoning hard kinda done for today. Just ned to look at all of his HelloMVC code on the git.
+
+
+
+
+
+
+making a form in index can do fancy rasor stuff. Aka <form asp-action="IndexwithID">   action is going to be in your controllers
+											aka letting you give values through to a view.
+						stuff
+						     </form>
+
+
+
+so he made a new MVC that he ended with .app
+
+Then added a new solution for .BLL   aka what he is using as the data models for the database. kinda.
+
+made a movie class with stuff. then a genre class with stuff. then a class as a repository
+
+made all the functions in repo.
+
+right click on the controllers folder. pick the mvc read write one. aka second option
+
+once code is generated. Right click on the action result thing. Then click add view and pick the function you are using.
+
+start up app has to have dependency reference the library.
+
+Then it auto generates fucking everything. Have to give it a model first. Into the view.
+so action reseult that you are using just make a new thing in there and give it the repo thing as a passed object.
+
+in the shared folder layout thing is the header and footer and can edit them by just changing controller and action.
+

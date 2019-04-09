@@ -1,0 +1,58 @@
+# Web Services Topics
+- SOA
+	- patterns (skipped)
+	- principles
+- SOAP
+	- message
+	- WSDL
+- WCF
+	- address
+	- binding
+	- contract
+	- attributes
+	- service reference
+- XML
+	- XML Schema
+- REST architecture
+	- principles
+	- HTTP
+	- content
+	- negotiation
+	- hypermedia
+	- resources, representations
+- HTTP
+	- request
+	- response,
+	- headers
+	- methods
+	- status codes
+	- safe
+	- idempotent
+- ASP.NET Core for APIs
+	- action result types
+	- attr routing
+	- swashbuckle/swagger
+	- JSON
+- HttpClient
+- Authentication, Authorization
+	- roles
+	- claims
+- JavaScript
+	- data types
+	- functions
+	- prototypes
+	- scopes
+	- ES6
+	- JSON
+	- callback
+	- closure
+- DOM
+	- traversal
+	- events
+	- event propogation
+- AJAX
+	- XmlHttpRequest
+	- Fetch API
+	- promises
+- Azure AD?
+- ASP.NET identity

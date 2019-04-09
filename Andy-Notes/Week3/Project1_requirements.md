@@ -1,4 +1,4 @@
-# project 0: store application
+# project 1: store web app
 February 18 2018 Arlington .NET / Nick Escalona
 
 ## functionality
@@ -10,10 +10,11 @@ February 18 2018 Arlington .NET / Nick Escalona
 * display all order history of a customer
 * display order history sorted by earliest, latest, cheapest, most expensive
 * display some statistics based on order history
-* search customers by name
 * persistent data (SQL)
-* input validation
+* client-side validation
+* server-side validation
 * exception handling
+* CSRF prevention
 * logging
 
 ## structure
@@ -26,18 +27,20 @@ February 18 2018 Arlington .NET / Nick Escalona
 * repository pattern (whether implemented here or in the data access project) abstracts EF-based data access
 
 ### user interface
-* interactive console application
-* has only display- and input-related code
-* low-priority component, will be replaced when we move to project 1
+* ASP.NET MVC web application
+* strongly-typed views
+* minimize logic in views
+* customize the default styling to some extent
 
 ### data access
 * class library
-* contains scaffolded EF DbContext
+* contains EF DbContext
 * if it has DTOs, no business logic should be on them
 
 ### test
 * use TDD for some of the application
 * focus on unit testing business logic
+* data access tests should not impact the app's actual database
 
 ## object model
 ### customer
@@ -63,6 +66,7 @@ February 18 2018 Arlington .NET / Nick Escalona
 
 ## technologies
 * C#/.NET
+* ASP.NET MVC
 * Entity Framework
 * Azure SQL DB
 * xUnit, NUnit, or MSTest

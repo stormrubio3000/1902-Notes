@@ -1,0 +1,70 @@
+# Week4: DevOps
+- SDLC
+	- waterfall
+	- iterative
+- Agile, Scrum, Kaban
+- Scrum
+	- Sprint
+	- planning
+	- user story
+	- effort
+	- capacity
+	- velocity
+	- scrum board
+- GIT
+	- Git branching
+	- merging
+	- pull req
+	- conflict resolution
+- DevOps:
+	- motivation
+	- values
+	- continuous integration/delivery/deployment
+	- build pipeline
+- Azure DevOps: 
+	- Pipelines, Board
+- Pipelines:
+	- build definition
+	- task
+	- parameter
+	- service connection
+	- release definition
+	- designer/YAML
+- Static Analysis
+	- SonarQube
+	- SonarCloud
+	- configuration
+	- quality
+	- gate
+	- quality profile
+- code coverage
+- cloud computing
+	- public
+	- private
+	- hybrid
+	- multi
+	- IaaS
+	- PaaS
+	- SaaS
+	- CaaS
+- Azure services
+	- VM
+	- SQL
+	- AppService
+	- storage
+- Docker:
+	- daemon
+	- CLI
+	- image
+	- container
+	- virtualization
+- Dockerfile
+	- FROM
+	- RUN
+	- CMD
+	- ENTRYPOINT
+	- EXPOSE
+	- COPY
+	- WORKDIR
+	- ARG
+(Docker orchestration, Compose, stack?)

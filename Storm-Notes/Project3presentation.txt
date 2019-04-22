@@ -1,0 +1,94 @@
+4-11-2019 batch notes.
+
+intro to teams, batch, and trainer into the project.
+description of the project.
+
+into project development
+
+into microservice architexture
+
+into what parts we worked on.
+
+into individual parts.
+
+state of the app for each part at the start of the project?
+
+into goals for their work span on the project.
+
+then into technologies? at start then by the end.
+
+then into primary and secondary tasks? Not the same as goals?
+
+then into each individual part of the project.
+
+Then the individual peoples contributions and what they worked on by tasks completed.
+
+Then after all of the parts of one team move to the tl of the other team and state goals again.
+
+kinda explains through the process and what they wanted to accomplish and why.
+
+Then back into individuals to explain what was done and individual parts.
+
+after all parts were put up. They went straight into a demo?
+
+or just demoing specific parts?
+
+Finshed the demo in 23ish minutes and then opened the floor to questions.
+
+Questions....
+
+What to pass on to future batches?
+
+What issues with certain technology?
+
+Approach to learning a new techonolgy and integrating it?
+
+What are concrete steps to configure the thing?
+
+Validation on all tiers?
+
+Hands and spacing of people needs to have something uniform.
+
+Persistent data moving away from local memory?
+
+How to deal with microservices going down?
+
+Devops feedback and best practices?
+
+Metrics on the quality of your code?
+
+Are you hardcoding things?
+
+They relyed really heavily on the not part of our project.
+
+ASked about merging and code reviews.
+
+questions lasted 25min whole thing lasted less than an hour.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
